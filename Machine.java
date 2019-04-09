@@ -5,13 +5,11 @@ import org.jfugue.player.Player;
 public class Machine
 {
 
-   private boolean active;
+   private String name;
    
-   private String 
+   public Machine(String newName){  name = newName;   }
    
-   public String main(String[] args)
-   {
-      if(active)
-   }
+   public void setName(String newName){   name = newName;   }
+   public String getName(){   return name;   }
    
 }

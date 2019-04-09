@@ -5,13 +5,21 @@ import org.jfugue.player.Player;
 import java.util.ArrayList;
 
 public class IndustrialWriter(){
-   private ArrayList<String> voices =  new ArrayList{"V0", "V1", "V2", "V3", "V4","V5", "V6", 
-                                       "V7", "V8", "V9", "V10", "V11", "V12", "V13", "V14", "V15"};
-   
+
    //place main machine of each branch (up to 16 machines) into the array Mainline
    private ArrayList<Machine> mainline = new ArrayList<>();
+   private ArrayList<String> voices =  new ArrayList{};
+
+   
+   private int tempo;
+   private int[] timeSignature;
    
    public static void main(String[] args)
+   {
+      
+   }   
+   
+   public static void voiceUpdater()
    {
       for(int i = 0; i < voices.size; i++)
       {
@@ -19,9 +27,22 @@ public class IndustrialWriter(){
          Machine branchMaster = mainline.get(i);
          
          currentTrack += " | " + branchMaster.main();
-         
-        
       }
-   }   
-
+   }
+   
+   public static void voiceSetUp(int voiceNum; String instrument)
+   {
+      if (voiceNum < 16)
+      {
+         
+      }
+   }
+   
+   public static void setTempo(int tempo) {  this.tempo = tempo;  }
+   
+   public static void setTimeSignature(int top, int bottom) {  timeSignature = [top, bottom] }
+   
+   public static int getTempo()  {  return tempo;  }
+   
+   public static int[] getTimeSignature() {  return timeSignature; }
 }
