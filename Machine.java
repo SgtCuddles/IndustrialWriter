@@ -1,7 +1,3 @@
-import org.jfugue.midi.MidiFileManager;
-import org.jfugue.pattern.Pattern;
-import org.jfugue.player.Player;
-
 public class Machine
 {  
    private String name;
@@ -10,5 +6,10 @@ public class Machine
    
    public void setName(String newName){   name = newName;   }
    public String getName(){   return name;   }
+   
+   public void onTrigger()
+   {
+      System.out.println("Beep boop");  
+   }
    
 }
