@@ -3,8 +3,7 @@ import org.jfugue.pattern.Pattern;
 import org.jfugue.player.Player;
 
 public class Machine
-{
-
+{  
    private String name;
    
    public Machine(String newName){  name = newName;   }
