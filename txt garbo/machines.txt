@@ -1,0 +1,27 @@
+rotator
+:can have up to 10 "arms" of which the active ones can be chosen
+:rotates at a steady rate
+
+twoPronged
+:alternates between 2 stored triggers : credit ayden
+
+bender
+:bends notes up in pich
+
+pulser
+:activates all assigned machines at once
+
+reciever
+:allows machines to write to a voice without being directly triggered
+:reads and repeats a signal
+
+twoIn
+:takes two trigger inputs and only sets off when both are active
+
+acDeac
+:accesses another machines active state and sets it to the opposite state
+
+
+NOTES
+: store patterns that all total to (user determined note value) by accumulating output of machines in a given branch
+: until they total up to that much
