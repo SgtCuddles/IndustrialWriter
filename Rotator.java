@@ -1,58 +1,51 @@
 import java.util.ArrayList;
 
-public class Rotator
+public class Rotator extends Signal
 {
    private int arms;
-   private int position;
    
    private boolean forwards;
-
-   public Rotator(int arms)
-   {
-      this.arms = arms - 1;
-      position = 0;
-      forwards = true;
-   }
    
    public Rotator(int arms, boolean forwards)
    {
-      this(arms);
+      super(0);
+      this.arms = arms - 1;
       this.forwards = forwards;
       if(!forwards)
       {
-         position = this.arms;
+         setCount(arms - 1);
       }
    }
    
+   public Rotator(int arms){  this(arms, true); }
+   
    public int onTrigger()
    {
-      int tmp = position;
-      if(position < arms && forwards)
+      int tmp = getCount();
+      if(getCount() < arms && forwards)
       {
-         position++;
+         setCount(getCount() + 1);
       }
       else if(forwards)
       {
-         position = 0;
+         setCount(0);
       }
       
-      if(position > 0 && !(forwards))
+      if(getCount() > 0 && !(forwards))
       {
-         position-=1;
+         setCount(getCount() - 1);
       }
       else if(!(forwards))
       {
-         position = arms;
+         setCount(arms);
       }
       
       return tmp;
    }
    
    public void setArms(int val){ arms = val; }
-   public void setPosition(int val){ position = val;   }
    public void setForwards(boolean val){  forwards = val;   }
    
    public int getArms(){   return arms;   }
-   public int getPosition(){  return position;  }
    public boolean getForwards(){  return forwards;  }
 }

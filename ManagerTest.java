@@ -7,7 +7,7 @@ public class ManagerTest
    public static void main(String[] args)
    {
       Scanner input = new Scanner(System.in);
-      ArrayList<Rotator> rotators = new  ArrayList<Rotator>();
+      ArrayList<Signal> rotators = new  ArrayList<Signal>();
       
       System.out.print("Add rotators? : ");
       while(input.nextBoolean())
@@ -18,17 +18,18 @@ public class ManagerTest
       }
       MachineManager manager = new MachineManager(rotators);
       
+      System.out.print("Num of measures : ");
       int duration = input.nextInt();
       
       input.close();
       
       for(int i = 0; i < duration; i++)
       {
-         rotators = manager.getRotators();
+         rotators = manager.getSignals();
          System.out.print("| ");
             for(int j = 0; j < rotators.size(); j++)
             {
-               System.out.print(rotators.get(j) + " ");
+               System.out.print(rotators.get(j).onTrigger() + " ");
             }
          System.out.print(" ");
       }
