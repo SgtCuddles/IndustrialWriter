@@ -1,7 +1,0 @@
-fix machine manager constructor issues
-
-make rotators send note values (w 1, h 1/2, q 1/4, i 1/8, s 1/16, t 1/32, x 1/64, or o 1/128)
-to "target" machines
-
-make rotator manager that goes through all active rotators checks
-time signatures and triggers them accordingly
