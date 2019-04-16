@@ -4,7 +4,7 @@ public class Signal
    
    public Signal(int count){  this.count = count;  }
    
-   public int onTrigger()
+   public int trigger()
    {
       return(-1);
    }

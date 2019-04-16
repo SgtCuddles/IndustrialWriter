@@ -1,14 +1,18 @@
 import java.util.ArrayList;
 
-public class Rotator extends Signal
+public class Rotator extends Machine
 {
    private int arms;
+   private int count;
+   private Machine target;
    
    private boolean forwards;
    
+   
    public Rotator(int arms, boolean forwards)
    {
-      super(0);
+      super(arms + " Arm Rotator");
+      count = 0;
       this.arms = arms - 1;
       this.forwards = forwards;
       if(!forwards)
@@ -19,33 +23,34 @@ public class Rotator extends Signal
    
    public Rotator(int arms){  this(arms, true); }
    
-   public int onTrigger()
+   public void trigger()
    {
-      int tmp = getCount();
-      if(getCount() < arms && forwards)
+      if(count < arms && forwards)
       {
-         setCount(getCount() + 1);
+         count++;
       }
       else if(forwards)
       {
-         setCount(0);
+         count = 0;
       }
       
-      if(getCount() > 0 && !(forwards))
+      if(count > 0 && !(forwards))
       {
-         setCount(getCount() - 1);
+         count--;
       }
       else if(!(forwards))
       {
-         setCount(arms);
+         count = arms;
       }
-      
-      return tmp;
    }
    
    public void setArms(int val){ arms = val; }
    public void setForwards(boolean val){  forwards = val;   }
+   public void setCount(int val){ count = val;   }
+   public void setTarget(Machine target){ this.target = target;   }
    
+   public int getCount(){  return count;  }
    public int getArms(){   return arms;   }
    public boolean getForwards(){  return forwards;  }
+   public Machine getTarget(){   return target; };
 }

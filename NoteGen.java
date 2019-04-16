@@ -1,13 +1,14 @@
 import java.util.ArrayList;
 
 public class NoteGen extends Machine
-{
-   private Signal master;
+{   
+   private String currentNote;
    
-   public noteGen(String name){  super(name);   }
+   public NoteGen(String name){  super(name);   }
    
-   public onTrigger()
+   
+   public void onTrigger()
    {
-      return (Signal.getCount());
+      
    }
 }

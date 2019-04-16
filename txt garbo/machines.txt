@@ -21,6 +21,9 @@ twoIn
 acDeac
 :accesses another machines active state and sets it to the opposite state
 
+endPoint/rotTrigger
+:takes the signal from the last machine in the signal and toggles the first rotator again
+
 
 NOTES
 : store patterns that all total to (user determined note value) by accumulating output of machines in a given branch

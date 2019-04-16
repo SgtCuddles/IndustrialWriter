@@ -29,7 +29,7 @@ public class ManagerTest
          System.out.print("| ");
             for(int j = 0; j < rotators.size(); j++)
             {
-               System.out.print(rotators.get(j).onTrigger() + " ");
+               System.out.print(rotators.get(j).trigger() + " ");
             }
          System.out.print(" ");
       }
